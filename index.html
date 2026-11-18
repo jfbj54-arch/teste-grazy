@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Uma demonstração interativa de vitrine de afiliados.">
+<title>Casa dos Achados | Vitrine demonstrativa</title>
+<style>
+:root{--paper:#fcfaf6;--ink:#29211e;--muted:#6f6159;--brand:#98462f;--line:#e9ded4}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:16px 'DM Sans',Arial,sans-serif}a{color:inherit}button{font:inherit;cursor:pointer}button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid #a45335;outline-offset:3px}.notice{text-align:center;padding:9px 16px;background:#352720;color:#fff0e5;font-size:.8rem}header,main,footer{width:min(1160px,calc(100% - 40px));margin:auto}header{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:23px 0}.logo{font: bold 25px Georgia,serif;text-decoration:none}.logo span{color:var(--brand)}header>a:last-child{text-decoration:none;font-size:.9rem;color:var(--muted)}.hero{min-height:405px;display:grid;grid-template-columns:1.08fr .92fr;border-radius:24px;overflow:hidden;background:#eee0d2}.intro{padding:clamp(28px,6vw,76px);align-self:center}.eyebrow{color:var(--brand);font-weight:bold;font-size:.75rem;text-transform:uppercase;letter-spacing:.15em}h1,h2{font-family:Georgia,serif;letter-spacing:-.04em}h1{font-size:clamp(2.7rem,6vw,5rem);line-height:1;margin:.22em 0}p{line-height:1.5}.intro p{color:#5d4a40;max-width:34ch;margin-bottom:26px}.primary,.outline{display:inline-block;padding:12px 17px;border-radius:10px;text-decoration:none;font-weight:bold}.primary{background:var(--brand);color:white}.heroart{min-height:215px;background:radial-gradient(circle at 48% 42%,#f1b593 0,#cc7d60 55%,#a75841 100%);position:relative}.heroart:before{content:"👟";position:absolute;inset:0;display:grid;place-items:center;font-size:clamp(5rem,13vw,10rem);transform:rotate(-16deg);filter:drop-shadow(0 13px 14px #6c372d44);z-index:0}.heroart img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.heroart span{position:absolute;bottom:18px;right:18px;background:#fff8ef;padding:8px 12px;border-radius:20px;font-size:.78rem}.section{padding-top:45px}h2{font-size:clamp(2rem,4vw,3rem);margin:0 0 9px}.tools{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin:20px 0}.tabs{display:flex;flex-wrap:wrap;gap:8px}.tabs button,.outline{background:white;border:1px solid var(--line);color:var(--ink)}.tabs button{border-radius:20px;padding:9px 13px}.tabs button[aria-pressed=true]{background:#352720;color:white;border-color:#352720}input{border:1px solid var(--line);border-radius:10px;padding:11px 13px;font:inherit;background:white;max-width:100%}.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}.card{overflow:hidden;border-radius:17px;background:white;border:1px solid var(--line);display:flex;flex-direction:column}.photo{aspect-ratio:1.25;display:grid;place-items:center;background:#eaddd1;font-size:3.5rem;position:relative;overflow:hidden}.photo img{position:absolute;width:100%;height:100%;object-fit:cover}.tag{position:absolute;top:10px;left:10px;background:#fff8ef;color:#792e1f;border-radius:20px;padding:5px 9px;font-size:.72rem;font-weight:bold}.details{padding:16px;display:flex;flex-direction:column;flex:1}.store{color:var(--brand);font-size:.78rem;font-weight:bold}.details h3{margin:7px 0 12px;font-size:1.03rem}.details strong{font-size:1.15rem;margin:auto 0 13px}.outline{text-align:center;font-size:.88rem}.outline:hover,.tabs button:hover{border-color:var(--brand)}#count{color:var(--muted);font-size:.9rem}footer{border-top:1px solid var(--line);margin-top:48px;padding:23px 0 30px;color:var(--muted);font-size:.85rem}dialog{border:1px solid var(--line);border-radius:17px;max-width:min(420px,calc(100% - 30px));padding:24px;color:var(--ink)}dialog::backdrop{background:#21171288}dialog form{display:flex;justify-content:flex-end}dialog button{border:0}.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}@media(max-width:860px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:620px){header,main,footer{width:calc(100% - 28px)}.hero{grid-template-columns:1fr}.heroart{min-height:190px}.section{padding-top:30px}.grid{gap:10px}.details{padding:11px}.outline{padding:9px 6px}input{width:100%}header{padding:17px 0}.logo{font-size:20px}}
+
+:root{--paper:#f9f6f0;--ink:#29211e;--brand:#91402b}
+body{background:radial-gradient(ellipse at 80% 0,#f1e5d9 0,transparent 42%),var(--paper)}
+.notice{background:#2b201c}
+.logo{display:inline-flex;align-items:center;gap:.28em}
+.logo::before{content:"";width:15px;height:15px;margin-right:5px;border-radius:4px;transform:rotate(45deg);background:linear-gradient(145deg,#ffceab,#a24c35 70%);box-shadow:2px 3px 0 #733a29}
+.hero{min-height:460px;background:linear-gradient(115deg,#f6e9dd 0%,#ecdbca 55%,#e9c1a8 100%);border:1px solid #ead6c6;box-shadow:0 16px 40px #58372313}
+.intro{position:relative;z-index:2;padding-right:24px}
+.intro h1{max-width:9ch}
+.primary{box-shadow:0 4px 0 #6e2919;transition:transform .18s,box-shadow .18s}
+.primary:hover{transform:translateY(-2px);box-shadow:0 6px 0 #6e2919}
+.scene{min-width:0;min-height:325px;position:relative;display:grid;place-items:center;isolation:isolate;overflow:hidden;perspective:900px;background:radial-gradient(ellipse at 53% 44%,#ffb68d 0,#d78361 43%,#a34e39 100%)}
+.scene::before,.scene::after{content:"";position:absolute;pointer-events:none}
+.scene::before{width:105%;height:105%;transform:rotate(-22deg);background:repeating-linear-gradient(0deg,transparent 0 41px,#ffffff1b 42px 43px);mask-image:radial-gradient(ellipse,#000,transparent 72%)}
+.scene::after{bottom:8%;width:69%;height:21%;background:#47170c99;filter:blur(25px);border-radius:50%;z-index:-1}
+.scene-object{--pitch:10deg;--yaw:-16deg;width:74%;max-width:475px;aspect-ratio:1.23;position:relative;transform-style:preserve-3d;transform:rotateX(var(--pitch)) rotateY(var(--yaw)) rotateZ(-7deg);transition:transform .25s ease-out}
+.scene-object::before,.scene-object::after{content:"";position:absolute;inset:0;border-radius:24px;pointer-events:none}
+.scene-object::before{background:linear-gradient(140deg,#a65036,#64271e);transform:translate3d(15px,19px,-37px);box-shadow:0 23px 47px #60241377}
+.scene-object::after{background:#ffe6cb;transform:translate3d(8px,9px,-18px);border:1px solid #f9b893}
+.heroart{position:absolute;inset:0;min-height:0;border-radius:24px;overflow:hidden;border:2px solid #ffd6bc;box-shadow:inset 0 0 36px #4b1b1638;transform:translateZ(1px)}
+.heroart img{z-index:1}
+.heroart span{display:none}
+.scene-label{position:absolute;right:-5%;bottom:3%;z-index:2;background:#fff7e9;border:1px solid #e5cbb8;box-shadow:0 12px 22px #5234244d;border-radius:999px;padding:10px 16px;color:#633323;font-weight:700;font-size:clamp(.69rem,1.1vw,.85rem);white-space:nowrap;transform:translateZ(55px)}
+.card{border-color:#e6d9ce;box-shadow:0 4px 0 #e8d9cc,0 12px 25px #492b1d0b;transition:box-shadow .22s,transform .22s}
+.card:nth-child(4n+2) .photo{background:radial-gradient(circle at 48% 31%,#fff1da,#e3b996)}
+.card:nth-child(4n+3) .photo{background:radial-gradient(circle at 48% 31%,#f8d8c1,#d68f78)}
+.card:nth-child(4n+4) .photo{background:radial-gradient(circle at 48% 31%,#ede2f8,#c6abc9)}
+.photo>span[aria-hidden]{filter:drop-shadow(0 12px 8px #411f3440)}
+.photo img{transition:transform .35s ease}
+@media (hover:hover) and (pointer:fine){
+  .card:hover,.card:focus-within{transform:translateY(-5px);box-shadow:0 5px 0 #e7d5c6,0 18px 28px #492b1d1d}
+  .card:hover .photo img{transform:scale(1.045)}
+}
+@media(max-width:620px){
+  .hero{min-height:0}
+  .intro{padding:32px 23px}
+  .intro h1{max-width:12ch}
+  .scene{min-height:255px}
+  .scene-object{width:67%;max-width:270px}
+  .scene-label{right:-8%;padding:8px 11px}
+  .scene-object::before,.scene-object::after,.heroart{border-radius:17px}
+  .grid{row-gap:15px}
+}
+@media(max-width:350px){.details{padding:9px}.details h3{overflow-wrap:anywhere}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="notice">Vitrine demonstrativa · Produtos e preços ilustrativos</div>
+<header><a class="logo" href="#">Casa dos <span>Achados</span></a><a href="#vitrines">Vitrines</a></header>
+<main>
+<section class="hero" aria-labelledby="title">
+<div class="intro"><div class="eyebrow">Casa, beleza, moda e tecnologia</div><h1 id="title">Bons achados em um só lugar.</h1><p>Explore produtos da Shopee, Magalu, Mercado Livre e Ybera Paris na mesma vitrine.</p><a href="#vitrines" class="primary">Explorar vitrines ↓</a></div>
+<div class="scene" aria-hidden="true"><div class="scene-object"><div class="heroart"><img alt="" src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&amp;fit=crop&amp;w=960&amp;q=80" onerror="this.remove()"></div><span class="scene-label">Moda e acessórios</span></div></div>
+</section>
+<section class="section" id="vitrines" aria-labelledby="heading">
+<h2 id="heading">Achados em destaque</h2>
+<div class="tools"><div class="tabs" aria-label="Filtrar por loja"></div><label class="sr-only" for="search">Buscar produto</label><input id="search" type="search" placeholder="Buscar produto…"></div>
+<p id="count" aria-live="polite"></p><div class="grid"></div>
+</section>
+</main>
+<footer><strong>Casa dos Achados</strong><p>Demonstração de uma vitrine de afiliados. Na versão final, o botão de cada produto levará à loja parceira pelo link de afiliada.</p></footer>
+<dialog id="preview"><h2 id="product"></h2><p id="destination"></p><form method="dialog"><button class="primary">Voltar à vitrine</button></form></dialog>
+<script>
+const products = [
+  ['Shopee','Bolsa tiracolo',59.90,'👜','1548036328-c9fa89d128fa',true],
+  ['Magalu','Fone Bluetooth',149.90,'🎧','1505740420928-5e560c06d30e',true],
+  ['Mercado Livre','Tênis esportivo',129.90,'👟','1542291026-7eec264c27ff',true],
+  ['Ybera Paris','Máscara capilar',89.90,'🧴','',true],
+  ['Shopee','Óculos de sol',39.90,'🕶️','1511499767150-a48a237f0083',false],
+  ['Magalu','Cafeteira elétrica',189.90,'☕','',false],
+  ['Mercado Livre','Relógio de pulso',119.90,'⌚','1523275335684-37898b6baf30',false],
+  ['Ybera Paris','Kit de cuidados capilares',159.90,'🧴','',false]
+];
+const stores = ['Todas','Shopee','Magalu','Mercado Livre','Ybera Paris'];
+const tabs = document.querySelector('.tabs');
+const search = document.querySelector('#search');
+const grid = document.querySelector('.grid');
+const dialog = document.querySelector('#preview');
+const price = new Intl.NumberFormat('pt-BR',{style:'currency',currency:'BRL'});
+const normalize = text => text.normalize('NFD').replace(/\p{Diacritic}/gu,'').toLowerCase();
+let selected = 'Todas';
+for (const store of stores) {
+  const button = document.createElement('button');
+  button.textContent = store;
+  button.addEventListener('click', () => {
+    selected = store;
+    document.querySelector('#heading').textContent = store === 'Todas' ? 'Achados em destaque' : 'Vitrine ' + store;
+    render();
+  });
+  tabs.append(button);
+}
+function render() {
+  for (const button of tabs.children) button.setAttribute('aria-pressed', button.textContent === selected);
+  const term = normalize(search.value.trim());
+  const matches = products.filter(([store,name]) => (selected === 'Todas' || selected === store) && normalize(name + ' ' + store).includes(term));
+  document.querySelector('#count').textContent = matches.length ? matches.length + (matches.length === 1 ? ' produto' : ' produtos') : 'Nenhum produto encontrado.';
+  grid.replaceChildren();
+  for (const [store,name,value,icon,photo,featured] of matches) {
+    const item = document.createElement('article');
+    item.className = 'card';
+    item.innerHTML = '<div class="photo"><span aria-hidden="true">' + icon + '</span>' + (photo ? '<img loading="lazy" alt="" src="https://images.unsplash.com/photo-' + photo + '?auto=format&fit=crop&w=480&q=75">' : '') + (featured ? '<span class="tag">Destaque</span>' : '') + '</div><div class="details"><span class="store">' + store + '</span><h3>' + name + '</h3><strong>' + price.format(value) + '</strong><button class="outline">Ver oferta</button></div>';
+    item.querySelector('img')?.addEventListener('error', event => event.target.remove());
+    item.querySelector('button').addEventListener('click', () => {
+      document.querySelector('#product').textContent = name;
+      document.querySelector('#destination').textContent = 'Na versão final, este botão abrirá a oferta na ' + store + ' pelo link de afiliada. Este produto e seu preço são ilustrativos.';
+      dialog.showModal();
+    });
+    grid.append(item);
+  }
+}
+const scene = document.querySelector('.scene');
+const sceneObject = document.querySelector('.scene-object');
+const enableTilt = matchMedia('(hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference)');
+scene.addEventListener('pointermove', event => {
+  if (!enableTilt.matches || event.pointerType === 'touch') return;
+  const bounds = scene.getBoundingClientRect();
+  const horizontal = (event.clientX - bounds.left) / bounds.width - .5;
+  const vertical = (event.clientY - bounds.top) / bounds.height - .5;
+  sceneObject.style.setProperty('--pitch', (10 - vertical * 18) + 'deg');
+  sceneObject.style.setProperty('--yaw', (-16 + horizontal * 25) + 'deg');
+});
+scene.addEventListener('pointerleave', () => {
+  sceneObject.style.removeProperty('--pitch');
+  sceneObject.style.removeProperty('--yaw');
+});
+search.addEventListener('input',render);
+render();
+</script>
+</body>
+</html>
